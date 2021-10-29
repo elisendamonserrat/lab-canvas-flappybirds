@@ -41,11 +41,8 @@ class Game {
       if (Math.random() > 0.99) {
         const y = Math.random() * this.canvas.height;
         const x = this.canvas.width - 20;
-        const height = Math.random() * this.canvas.height;
-        this.obstacles.push(new Obstacle(this.ctx, x, y, 20, height, 1));
+        this.obstacles.push(new Obstacle(this.ctx, x, y, 1));
       }
-
-      console.log("obstacles", this.obstacles);
 
       // 1. UPDATE THE STATE OF PLAYER AND WE MOVE THE OBSTACLES
       this.player.update();
