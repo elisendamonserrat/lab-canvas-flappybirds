@@ -40,6 +40,8 @@ class Player {
   }
   
   didCollide(obstacle){
+    console.log((this.x+this.size >= obstacle.x , this.y+this.size > obstacle.y , this.y < obstacle.y+obstacle.size ))
+    console.log(this.x <= obstacle.x+obstacle.size , this.y+this.size > obstacle.y , this.y < obstacle.y+obstacle.size)
     if(this.x+this.size >= obstacle.x && this.y+this.size > obstacle.y && this.y < obstacle.y+obstacle.size ) return true
     if(this.x <= obstacle.x+obstacle.size && this.y+this.size > obstacle.y && this.y < obstacle.y+obstacle.size) return true
     return false

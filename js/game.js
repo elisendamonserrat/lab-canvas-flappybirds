@@ -50,6 +50,8 @@ class Game {
         obstacle.move();
       });
 
+      this.checkCollisions()
+
       // 2. CLEAR THE CANVAS
       this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
 
@@ -83,9 +85,10 @@ class Game {
   checkCollisions() {
     this.obstacles.forEach((obstacle) => {
       if (this.player.didCollide(obstacle)) {
+          console.log('boom')
         this.gameIsOver= true;
         }
       }
-    });
+    );
   }
 }
