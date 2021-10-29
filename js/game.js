@@ -66,6 +66,8 @@ class Game {
       // 4. TERMINATE LOOP IF GAME IS OVER
       if (!this.gameIsOver) {
         window.requestAnimationFrame(loop);
+      }else{
+        buildGameOver()
       }
 
       //  5. Update Game data/stats
@@ -79,14 +81,9 @@ class Game {
   }
 
   checkCollisions() {
-    this.enemies.forEach((enemy) => {
-      if (this.player.didCollide(enemy)) {
-        this.player.removeLife();
-        // Move the enemy off screen to the left
-        enemy.x = 0 - enemy.size;
-
-        if (this.player.lives === 0) {
-          this.gameOver();
+    this.obstacles.forEach((obstacle) => {
+      if (this.player.didCollide(obstacle)) {
+        this.gameIsOver= true;
         }
       }
     });

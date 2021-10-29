@@ -38,4 +38,10 @@ class Player {
     // fillRect(x, y, width, height)
     this.ctx.fillRect(this.x, this.y, this.size, this.size);
   }
+  
+  didCollide(obstacle){
+    if(this.x+this.size >= obstacle.x && this.y+this.size > obstacle.y && this.y < obstacle.y+obstacle.size ) return true
+    if(this.x <= obstacle.x+obstacle.size && this.y+this.size > obstacle.y && this.y < obstacle.y+obstacle.size) return true
+    return false
+  }
 }
